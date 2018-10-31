@@ -13,7 +13,7 @@ import { AuthGuard } from './auth/auth-guard.service';
 const appRoutes: Routes = [
 //   { path: '', redirectTo: 'recipes', pathMatch: 'full' },
   { path: '', component: HomeComponent },
-  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipeModule', canLoad: [AuthGuard]},
+  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipeModule'},
   { path: 'shopping-list', component: ShoppingListComponent },
 
  

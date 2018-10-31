@@ -3,15 +3,13 @@ import { Injectable } from "@angular/core";
 import 'rxjs/Rx';
 import { RecipeService } from "../recipes/recipe.service";
 import { Recipe } from "../recipes/recipe.model";
-import { AuthService } from "../auth/auth.service";
-import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from "@angular/common/http";
+import { HttpClient, HttpRequest } from "@angular/common/http";
 
 
 @Injectable()
 export class DataStorageService {
     constructor(private httpClient: HttpClient,
-                private recipeService: RecipeService,
-                private authService: AuthService){}
+                private recipeService: RecipeService){}
 
     storeRecipes(){
         
@@ -22,8 +20,10 @@ export class DataStorageService {
         //     params: new HttpParams().set('auth',token)
         // });
 
-        const req = new HttpRequest('PUT', 'https://ng-shopping-app-2f2ea.firebaseio.com/recipes.json', this.recipeService.getRecipes(), {reportProgress: true});
-        return this.httpClient.request(req); //pass a configured request
+        //const req = new HttpRequest('PUT', 'https://ng-shopping-app-2f2ea.firebaseio.com/recipes.json', this.recipeService.getRecipes(), {reportProgress: true});
+        //return this.httpClient.request(req); //pass a configured request
+
+    
     }
 
     getRecipes(){

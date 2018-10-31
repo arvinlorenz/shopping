@@ -29,29 +29,30 @@ export class RecipeService {
   		),
   ];
 
-  getRecipes(){
-  	return this.recipes.slice();//get just a copy
-  }
+
+//   getRecipes(){
+//   	return this.recipes.slice();//get just a copy
+//   }
 
 
-  getRecipe(index:number){
-    return this.recipes[index];
-  }
+//   getRecipe(index:number){
+//     return this.recipes[index];
+//   }
 
-	addRecipe(recipe: Recipe){
-		this.recipes.push(recipe);
-		this.recipesChanged.next(this.recipes.slice());
-	}
+	// addRecipe(recipe: Recipe){
+	// 	this.recipes.push(recipe);
+	// 	this.recipesChanged.next(this.recipes.slice());
+	// }
 
-	updateRecipe(index: number, newRecipe: Recipe){
-		this.recipes[index] = newRecipe; //not the original array of recipe is reflected in the html so make subject of changes to emit
-		this.recipesChanged.next(this.recipes.slice());
-	}
+	// updateRecipe(index: number, newRecipe: Recipe){
+	// 	this.recipes[index] = newRecipe; //not the original array of recipe is reflected in the html so make subject of changes to emit
+	// 	this.recipesChanged.next(this.recipes.slice());
+	// }
 
-	deleteRecipe(index: number){
-		this.recipes.splice(index,1);
-		this.recipesChanged.next(this.recipes.slice());
-	}
+	// deleteRecipe(index: number){
+	// 	this.recipes.splice(index,1);
+	// 	this.recipesChanged.next(this.recipes.slice());
+	// }
 
 	setRecipes(newRecipes: Recipe[]){
 		this.recipes = newRecipes;

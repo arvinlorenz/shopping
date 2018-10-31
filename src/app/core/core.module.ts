@@ -30,8 +30,8 @@ import { LoggingInterceptor } from "../shared/logging.interceptor";
     providers: [
         ShoppingListService, 
         RecipeService, 
-        DataStorageService, 
-        AuthService, 
+        //DataStorageService, 
+        AuthService, //should be deleted becoz all methods are deleted because of NGrx effect
         AuthGuard,
         {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
         {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true}
